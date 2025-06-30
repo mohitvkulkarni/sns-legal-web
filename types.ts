@@ -1,4 +1,3 @@
-
 export interface PracticeArea {
   id: string;
   category: string;
@@ -8,6 +7,7 @@ export interface PracticeArea {
 
 export interface TeamMember {
   name: string;
+  qualifications?: string;
   title: string;
   imageUrl: string;
   bio: string[];

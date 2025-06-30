@@ -14,7 +14,6 @@ import {
   useTheme,
 } from "@mui/material";
 import {
-  Gavel,
   Security,
   AccountBalance,
   TrendingUp,
@@ -97,8 +96,8 @@ const HomePage: React.FC = () => {
   ];
 
   const stats = [
-    { number: "10+", label: "Years Experience" },
-    { number: "500+", label: "Cases Handled" },
+    { number: "15+", label: "Years Experience" },
+    { number: "100+", label: "Cases Handled" },
     { number: "9", label: "Practice Areas" },
     { number: "100%", label: "Client Satisfaction" },
   ];
@@ -294,41 +293,24 @@ const HomePage: React.FC = () => {
                       sx={{
                         position: "relative",
                         zIndex: 2,
-                        color: theme.palette.primary.main,
                         textAlign: "center",
                         p: { xs: 3, md: 4 },
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
-                      <Gavel
-                        sx={{
-                          fontSize: { xs: 60, sm: 70, md: 80 },
-                          mb: 2,
-                          color: theme.palette.primary.main,
+                      <img
+                        src="/logo.png"
+                        alt="SNS Legal Logo"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          width: "auto",
+                          height: "auto",
+                          objectFit: "contain",
                         }}
                       />
-                      <Typography
-                        variant="h4"
-                        sx={{
-                          fontWeight: 700,
-                          fontSize: {
-                            xs: "1.5rem",
-                            sm: "1.75rem",
-                            md: "2.125rem",
-                          },
-                        }}
-                      >
-                        SNS Legal
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          mt: 1,
-                          opacity: 0.8,
-                          fontSize: { xs: "0.9rem", sm: "1rem", md: "1rem" },
-                        }}
-                      >
-                        Excellence in Legal Practice
-                      </Typography>
                     </Box>
                   </Box>
                 </motion.div>
@@ -521,10 +503,32 @@ const HomePage: React.FC = () => {
                 >
                   At SNS Legal, we offer legal services in civil and criminal
                   litigation, corporate and commercial law, real estate and
-                  property matters, family and matrimonial disputes, startup and
+                  property matters, family and matrimonial disputes,
+                  white-collar crime, employment and labour law, startup and
                   investment advisory, intellectual property rights, data
-                  privacy and technology law, and alternative dispute
-                  resolution.
+                  privacy and technology law, cybercrime, consumer protection,
+                  and alternative dispute resolution (ADR). We also remain
+                  actively engaged in emerging sectors such as fintech, ESG
+                  compliance, digital assets, artificial intelligence law, and
+                  cross-border regulatory frameworks.
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{
+                    fontSize: { xs: "1rem", md: "1.125rem" },
+                    mb: 3,
+                    px: { xs: 1, md: 0 },
+                  }}
+                >
+                  While the scope of our work is broad, our approach remains
+                  focused and client-conscious. We understand that behind every
+                  legal matter lies a unique concern—whether personal,
+                  financial, or reputational. As a result, we approach each case
+                  with a commitment to clarity, confidentiality, and care,
+                  taking the time to understand the context as thoroughly as we
+                  analyse the law.
                 </Typography>
 
                 <Typography
@@ -539,7 +543,31 @@ const HomePage: React.FC = () => {
                   Being a boutique practice allows us to remain agile and
                   attentive. We are selective in our engagements, allowing us to
                   deliver detailed, customised legal solutions rather than
-                  adopting a one-size-fits-all approach.
+                  adopting a one-size-fits-all approach. Whether it is guiding a
+                  founder through the complexities of structuring an early-stage
+                  company, supporting an individual during a difficult family
+                  dispute, or advising a business on regulatory compliance, we
+                  approach each matter with professionalism and purpose.
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{
+                    fontSize: { xs: "1rem", md: "1.125rem" },
+                    mb: 3,
+                    px: { xs: 1, md: 0 },
+                  }}
+                >
+                  Our firm's ethos is shaped not only by legal competence but by
+                  our ongoing effort to stay relevant and responsible in a
+                  changing world. Legal practice today requires more than just
+                  knowledge of statutes and precedents—it demands awareness of
+                  business realities, technological disruptions, and
+                  socio-economic change. At SNS Legal, we actively engage in
+                  continuing education, sectoral research, and policy awareness
+                  to ensure that our advice remains practical, contemporary, and
+                  effective.
                 </Typography>
 
                 <Typography
@@ -555,7 +583,9 @@ const HomePage: React.FC = () => {
                   representation—it is about informed guidance, strategic
                   foresight, and trusted partnership. Through a combination of
                   legal rigour and human understanding, SNS Legal remains
-                  committed to upholding the integrity of the law.
+                  committed to upholding the integrity of the law while
+                  assisting those who turn to it for resolution, direction, or
+                  support.
                 </Typography>
               </motion.div>
             </Collapse>
