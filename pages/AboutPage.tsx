@@ -23,7 +23,7 @@ const AboutPage = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 } }}>
+    <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: { xs: 8, md: 12 } }}>
           <Typography variant="h2" component="h1" gutterBottom>
@@ -62,7 +62,7 @@ const AboutPage = () => {
                       width: 200,
                       height: 200,
                       mb: 2,
-                      bgcolor: "grey.200",
+                      bgcolor: "grey.800",
                       border: "4px solid",
                       borderColor: "background.paper",
                       boxShadow: 5,

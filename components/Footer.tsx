@@ -19,12 +19,11 @@ const Footer = () => {
               variant="h6"
               component="h3"
               gutterBottom
-              sx={{ fontFamily: "'Montserrat', 'sans-serif'" }}
+              sx={{ fontFamily: "'Inter', 'sans-serif'", lineHeight: 1.4 }}
             >
-              SNS LEGAL
-            </Typography>
-            <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)" }}>
-              Integrating law with innovation, governance, and growth.
+              SNS Legal
+              <br />
+              Advocates and Solicitors
             </Typography>
           </Grid>
           <Grid item xs={12} md={8}>

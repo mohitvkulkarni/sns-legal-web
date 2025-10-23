@@ -3,7 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 const TermsOfUsePage: React.FC = () => {
   return (
-    <Box sx={{ py: { xs: 6, md: 8 } }}>
+    <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 8 } }}>
       <Container maxWidth="lg">
         <Typography
           variant="h3"

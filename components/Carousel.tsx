@@ -66,18 +66,18 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <Card
             variant="outlined"
             sx={{
-              border: "1px solid rgba(0,0,0,0.08)",
+              border: "1px solid #2d3339",
               borderRadius: 3,
               textAlign: "center",
             }}
           >
-            <CardContent sx={{ p: { xs: 3, md: 5 } }}>
+            <CardContent sx={{ p: { xs: 4, md: 6 } }}>
               <Typography
                 variant="h5"
                 component="h2"
                 sx={{
                   color: "primary.main",
-                  mb: 2,
+                  mb: 3,
                   fontWeight: "bold",
                   fontSize: { xs: "1.5rem", md: "1.75rem" },
                 }}
@@ -92,11 +92,18 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
                   fontSize: { xs: "1.1rem", md: "1.25rem" },
                   fontWeight: "medium",
                   color: "text.primary",
+                  mb: 2,
                 }}
               >
                 {currentItem.title}
               </Typography>
-              <Typography variant="body1" color="text.secondary">
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{
+                  lineHeight: 1.8,
+                }}
+              >
                 {currentItem.content}
               </Typography>
             </CardContent>

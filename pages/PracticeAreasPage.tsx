@@ -9,7 +9,13 @@ import Typography from "@mui/material/Typography";
 
 const PracticeAreasPage = () => {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: "background.paper" }}>
+    <Box
+      sx={{
+        pt: { xs: 12, md: 14 },
+        pb: { xs: 8, md: 12 },
+        bgcolor: "background.paper",
+      }}
+    >
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: { xs: 8, md: 12 } }}>
           <Typography variant="h2" component="h1" gutterBottom>

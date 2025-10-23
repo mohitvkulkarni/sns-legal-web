@@ -74,8 +74,8 @@ const Header: React.FC = () => {
             borderRadius: 2,
             position: "relative",
             "&:hover": {
-              backgroundColor: "rgba(200, 178, 153, 0.12)",
-              color: theme.palette.secondary.main,
+              backgroundColor: "rgba(201, 169, 97, 0.12)",
+              color: theme.palette.primary.main,
             },
             "&::after": isActive
               ? {
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
       onClose={handleMobileMenuToggle}
       sx={{
         "& .MuiDrawer-paper": {
-          backgroundColor: "rgba(250, 250, 250, 0.95)",
+          backgroundColor: "rgba(15, 20, 25, 0.98)",
           backdropFilter: "blur(20px)",
           borderBottom: `1px solid ${theme.palette.divider}`,
           paddingTop: "80px",
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                 borderRadius: 2,
                 mb: 1,
                 "&:hover": {
-                  backgroundColor: "rgba(200, 178, 153, 0.12)",
+                  backgroundColor: "rgba(201, 169, 97, 0.12)",
                 },
               }}
             >
@@ -175,8 +175,8 @@ const Header: React.FC = () => {
           elevation={0}
           sx={{
             backgroundColor: isScrolled
-              ? "rgba(250, 250, 250, 0.95)"
-              : "rgba(250, 250, 250, 0.8)",
+              ? "rgba(15, 20, 25, 0.98)"
+              : "rgba(15, 20, 25, 0.95)",
             backdropFilter: "blur(20px)",
             borderBottom: isScrolled
               ? `1px solid ${theme.palette.divider}`
