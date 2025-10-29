@@ -2,28 +2,28 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     primary: {
-      main: "#c9a961", // Sophisticated gold
-      light: "#d4b876",
-      dark: "#b39447",
-      contrastText: "#1a1a1a",
+      main: "#1e3a5f", // Navy blue
+      light: "#2d5a8f",
+      dark: "#0f1f3f",
+      contrastText: "#ffffff",
     },
     secondary: {
-      main: "#7a9cc6", // Professional blue
-      light: "#95b3d7",
-      dark: "#5f7fa3",
+      main: "#3a7ca5", // Lighter blue
+      light: "#5a9cc5",
+      dark: "#2a5c85",
       contrastText: "#ffffff",
     },
     background: {
-      default: "#0f1419", // Deep charcoal
-      paper: "#1a1f26", // Elevated dark
+      default: "#f5f5f5", // Light gray background
+      paper: "#ffffff", // White paper/card background
     },
     text: {
-      primary: "#e8e8e8", // Soft white
-      secondary: "#a0a0a0", // Medium gray
+      primary: "#1a1a1a", // Near-black for primary text
+      secondary: "#666666", // Medium gray for secondary text
     },
-    divider: "#2d3339",
+    divider: "#e0e0e0",
     success: {
       main: "#4caf50",
     },
@@ -52,50 +52,50 @@ const theme = createTheme({
       fontSize: "clamp(2.5rem, 8vw, 3.5rem)",
       fontWeight: 700,
       lineHeight: 1.2,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
       letterSpacing: "-0.02em",
     },
     h2: {
       fontSize: "clamp(2rem, 6vw, 2.5rem)",
       fontWeight: 600,
       lineHeight: 1.3,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
       letterSpacing: "-0.01em",
     },
     h3: {
       fontSize: "clamp(1.5rem, 4vw, 2rem)",
       fontWeight: 600,
       lineHeight: 1.3,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
     },
     h4: {
       fontSize: "clamp(1.25rem, 3vw, 1.5rem)",
       fontWeight: 500,
       lineHeight: 1.4,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
     },
     h5: {
       fontSize: "clamp(1.1rem, 2.5vw, 1.25rem)",
       fontWeight: 500,
       lineHeight: 1.4,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
     },
     h6: {
       fontSize: "clamp(1rem, 2vw, 1.125rem)",
       fontWeight: 500,
       lineHeight: 1.4,
-      color: "#e8e8e8",
+      color: "#1a1a1a",
     },
     body1: {
       fontSize: "1rem",
       lineHeight: 1.6,
-      color: "#a0a0a0",
+      color: "#666666",
       fontWeight: 400,
     },
     body2: {
       fontSize: "0.875rem",
       lineHeight: 1.6,
-      color: "#a0a0a0",
+      color: "#666666",
       fontWeight: 400,
     },
     button: {
@@ -140,23 +140,23 @@ const theme = createTheme({
           boxShadow: "none",
         },
         contained: {
-          background: "linear-gradient(135deg, #c9a961 0%, #d4b876 100%)",
-          color: "#1a1a1a",
-          boxShadow: "0px 4px 14px rgba(201, 169, 97, 0.3)",
+          background: "linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%)",
+          color: "#ffffff",
+          boxShadow: "0px 2px 8px rgba(30, 58, 95, 0.25)",
           "&:hover": {
-            background: "linear-gradient(135deg, #d4b876 0%, #c9a961 100%)",
-            boxShadow: "0px 6px 20px rgba(201, 169, 97, 0.4)",
+            background: "linear-gradient(135deg, #2d5a8f 0%, #1e3a5f 100%)",
+            boxShadow: "0px 4px 16px rgba(30, 58, 95, 0.35)",
             transform: "translateY(-2px)",
           },
         },
         outlined: {
           borderWidth: "2px",
-          borderColor: "#7a9cc6",
-          color: "#7a9cc6",
+          borderColor: "#5f7fa3",
+          color: "#5f7fa3",
           "&:hover": {
             borderWidth: "2px",
-            backgroundColor: "rgba(122, 156, 198, 0.12)",
-            borderColor: "#95b3d7",
+            backgroundColor: "rgba(95, 127, 163, 0.08)",
+            borderColor: "#4a6382",
             transform: "translateY(-2px)",
           },
         },
@@ -166,12 +166,12 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 16,
-          backgroundColor: "#1a1f26",
-          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.3)",
-          border: "1px solid #2d3339",
+          backgroundColor: "#ffffff",
+          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.08)",
+          border: "1px solid #e0e0e0",
           "&:hover": {
-            boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.4)",
-            borderColor: "#c9a961",
+            boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.12)",
+            borderColor: "#1e3a5f",
             transform: "translateY(-2px)",
             transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           },
@@ -181,11 +181,11 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "rgba(15, 20, 25, 0.95)",
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(10px)",
-          color: "#e8e8e8",
-          borderBottom: "1px solid #2d3339",
-          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.3)",
+          color: "#1a1a1a",
+          borderBottom: "1px solid #e0e0e0",
+          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
         },
       },
     },
@@ -193,27 +193,27 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "& .MuiOutlinedInput-root": {
-            backgroundColor: "#1a1f26",
+            backgroundColor: "#ffffff",
             borderRadius: 12,
             "& fieldset": {
-              borderColor: "#2d3339",
+              borderColor: "#e0e0e0",
             },
             "&:hover fieldset": {
-              borderColor: "#c9a961",
+              borderColor: "#1e3a5f",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "#c9a961",
+              borderColor: "#1e3a5f",
               borderWidth: "2px",
             },
           },
           "& .MuiInputLabel-root": {
-            color: "#a0a0a0",
+            color: "#666666",
             "&.Mui-focused": {
-              color: "#c9a961",
+              color: "#1e3a5f",
             },
           },
           "& .MuiOutlinedInput-input": {
-            color: "#e8e8e8",
+            color: "#1a1a1a",
           },
         },
       },
@@ -221,7 +221,7 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: "#1a1f26",
+          backgroundColor: "#ffffff",
           backgroundImage: "none",
         },
       },
@@ -229,7 +229,7 @@ const theme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: "#2d3339",
+          borderColor: "#e0e0e0",
         },
       },
     },

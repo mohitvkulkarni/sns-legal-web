@@ -112,11 +112,11 @@ const HomePage: React.FC = () => {
           display: "flex",
           alignItems: "center",
           position: "relative",
-          background:
-            "linear-gradient(180deg, #0f1419 0%, #1a1f26 50%, #0f1419 100%)",
+          background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
           pt: { xs: 12, md: 14 },
-          pb: { xs: 8, md: 0 },
+          pb: { xs: 8, md: 12 },
           px: { xs: 2, md: 0 },
+          overflow: "hidden",
           "&::before": {
             content: '""',
             position: "absolute",
@@ -124,12 +124,54 @@ const HomePage: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: `radial-gradient(circle at 10% 20%, rgba(201, 169, 97, 0.08) 0%, transparent 40%),
-                         radial-gradient(circle at 90% 80%, rgba(122, 156, 198, 0.08) 0%, transparent 40%)`,
+            background: `radial-gradient(circle at 20% 30%, rgba(30, 58, 95, 0.03) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 70%, rgba(58, 124, 165, 0.03) 0%, transparent 50%)`,
+            pointerEvents: "none",
+          },
+          "&::after": {
+            content: '"SNS"',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            fontSize: { xs: "15rem", sm: "20rem", md: "25rem", lg: "30rem" },
+            fontWeight: 900,
+            color: "rgba(30, 58, 95, 0.04)",
+            letterSpacing: "-0.05em",
+            lineHeight: 1,
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+          },
+
+          "& .decorative-line-1": {
+            position: "absolute",
+            top: "20%",
+            left: "0",
+            width: "150px",
+            height: "2px",
+            background:
+              "linear-gradient(90deg, transparent 0%, rgba(30, 58, 95, 0.15) 100%)",
+            pointerEvents: "none",
+          },
+          "& .decorative-line-2": {
+            position: "absolute",
+            bottom: "25%",
+            right: "0",
+            width: "200px",
+            height: "2px",
+            background:
+              "linear-gradient(90deg, rgba(58, 124, 165, 0.15) 0%, transparent 100%)",
             pointerEvents: "none",
           },
         }}
       >
+        {/* Decorative Elements */}
+        <Box className="decorative-circle-1" />
+        <Box className="decorative-circle-2" />
+        <Box className="decorative-line-1" />
+        <Box className="decorative-line-2" />
+
         <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
           <motion.div
             style={{ y: heroY }}
@@ -137,237 +179,165 @@ const HomePage: React.FC = () => {
             animate={heroInView ? "animate" : "initial"}
             variants={staggerContainer}
           >
-            <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-              <Grid item xs={12} md={6}>
-                <motion.div variants={fadeInUp}>
-                  <Box>
-                    <Typography
-                      variant="h1"
-                      component="h1"
-                      sx={{
-                        mb: { xs: 1, md: 1 },
-                        color: theme.palette.primary.main,
-                        letterSpacing: "-0.03em",
-                        fontWeight: 800,
-                        textAlign: { xs: "center", md: "left" },
-                        fontSize: {
-                          xs: "2.5rem",
-                          sm: "3rem",
-                          md: "clamp(2.8rem, 5vw, 4rem)",
-                        },
-                        lineHeight: { xs: 1.15, md: 1.1 },
-                      }}
-                    >
-                      SNS Legal
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      component="div"
-                      sx={{
-                        mb: { xs: 4, md: 4 },
-                        color: theme.palette.text.secondary,
-                        letterSpacing: "0.02em",
-                        fontWeight: 500,
-                        textAlign: { xs: "center", md: "left" },
-                        fontSize: {
-                          xs: "1.1rem",
-                          sm: "1.25rem",
-                          md: "1.5rem",
-                        },
-                      }}
-                    >
-                      Advocates and Solicitors
-                    </Typography>
-                  </Box>
-                </motion.div>
+            <Box sx={{ textAlign: "center", maxWidth: "1000px", mx: "auto" }}>
+              <motion.div variants={fadeInUp}>
+                <Typography
+                  variant="h1"
+                  component="h1"
+                  sx={{
+                    mb: 3,
+                    color: theme.palette.primary.main,
+                    letterSpacing: "-0.03em",
+                    fontWeight: 800,
+                    fontSize: {
+                      xs: "2.8rem",
+                      sm: "3.5rem",
+                      md: "4.5rem",
+                      lg: "5rem",
+                    },
+                    lineHeight: 1.1,
+                  }}
+                >
+                  SNS Legal
+                </Typography>
+                <Typography
+                  variant="h4"
+                  component="div"
+                  sx={{
+                    mb: 5,
+                    color: theme.palette.secondary.main,
+                    letterSpacing: "0.05em",
+                    fontWeight: 600,
+                    fontSize: {
+                      xs: "1.25rem",
+                      sm: "1.5rem",
+                      md: "1.75rem",
+                    },
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Advocates & Solicitors
+                </Typography>
+              </motion.div>
 
-                <motion.div variants={fadeInUp}>
-                  <Typography
-                    variant="h5"
-                    color={theme.palette.text.secondary}
+              <motion.div variants={fadeInUp}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    mb: 6,
+                    lineHeight: 1.7,
+                    fontWeight: 400,
+                    fontSize: { xs: "1.15rem", sm: "1.3rem", md: "1.4rem" },
+                    color: theme.palette.text.secondary,
+                    maxWidth: "800px",
+                    mx: "auto",
+                  }}
+                >
+                  We navigate the law, so you can focus on growth. Reliable
+                  support when it matters most.
+                </Typography>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Stack
+                  direction={{ xs: "column", sm: "row" }}
+                  spacing={3}
+                  sx={{
+                    mb: 8,
+                    justifyContent: "center",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    size="large"
+                    component={RouterLink}
+                    to="/contact"
+                    endIcon={<ArrowForward />}
                     sx={{
-                      mb: { xs: 5, md: 5 },
-                      lineHeight: { xs: 1.6, md: 1.7 },
-                      fontWeight: 400,
-                      textAlign: { xs: "center", md: "left" },
-                      fontSize: { xs: "1.2rem", sm: "1.35rem", md: "1.4rem" },
-                      px: { xs: 1, md: 0 },
+                      py: 2,
+                      px: 5,
+                      fontSize: "1.1rem",
+                      borderRadius: 2,
+                      fontWeight: 600,
                     }}
                   >
-                    We navigate the law, so you can focus on growth. Reliable
-                    support when it matters most.
-                  </Typography>
-                </motion.div>
-
-                <motion.div variants={fadeInUp}>
-                  <Stack
-                    direction={{ xs: "column", sm: "row" }}
-                    spacing={{ xs: 3, sm: 3 }}
+                    Get Legal Consultation
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    component={RouterLink}
+                    to="/about"
                     sx={{
-                      mb: { xs: 6, md: 8 },
-                      alignItems: { xs: "center", sm: "flex-start" },
-                      px: { xs: 1, md: 0 },
+                      py: 2,
+                      px: 5,
+                      fontSize: "1.1rem",
+                      borderRadius: 2,
+                      fontWeight: 600,
                     }}
                   >
-                    <Button
-                      variant="contained"
-                      size="large"
-                      component={RouterLink}
-                      to="/contact"
-                      endIcon={<ArrowForward />}
-                      sx={{
-                        py: { xs: 2.5, md: 2.5 },
-                        px: { xs: 5, md: 5 },
-                        fontSize: { xs: "1.1rem", md: "1.15rem" },
-                        borderRadius: 8,
-                        bgcolor: theme.palette.primary.main,
-                        color: theme.palette.primary.contrastText,
-                        fontWeight: 600,
-                        width: { xs: "100%", sm: "auto" },
-                        maxWidth: { xs: "320px", sm: "none" },
-                        boxShadow: "0px 8px 25px rgba(155, 135, 196, 0.3)",
-                        "&:hover": {
-                          bgcolor: theme.palette.primary.light,
-                          boxShadow: "0px 12px 35px rgba(155, 135, 196, 0.4)",
-                          transform: "translateY(-2px)",
-                        },
-                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                      }}
-                    >
-                      Get Legal Consultation
-                    </Button>
-                    <Button
-                      variant="outlined"
-                      size="large"
-                      component={RouterLink}
-                      to="/about"
-                      sx={{
-                        py: { xs: 2.5, md: 2.5 },
-                        px: { xs: 5, md: 5 },
-                        fontSize: { xs: "1.1rem", md: "1.15rem" },
-                        borderRadius: 8,
-                        color: theme.palette.secondary.main,
-                        borderColor: theme.palette.secondary.main,
-                        borderWidth: "2px",
-                        fontWeight: 600,
-                        width: { xs: "100%", sm: "auto" },
-                        maxWidth: { xs: "320px", sm: "none" },
-                        "&:hover": {
-                          backgroundColor: "rgba(244, 166, 184, 0.1)",
-                          borderColor: theme.palette.secondary.dark,
-                          borderWidth: "2px",
-                          transform: "translateY(-2px)",
-                        },
-                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Stack>
-                </motion.div>
+                    Learn More
+                  </Button>
+                </Stack>
+              </motion.div>
 
-                <motion.div variants={fadeInUp}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: { xs: 3, md: 4 },
-                      justifyContent: { xs: "center", md: "flex-start" },
-                      px: { xs: 1, md: 0 },
-                    }}
-                  >
-                    {stats.map((stat, index) => (
+              <motion.div variants={fadeInUp}>
+                <Grid
+                  container
+                  spacing={3}
+                  sx={{ maxWidth: "900px", mx: "auto" }}
+                >
+                  {stats.map((stat, index) => (
+                    <Grid item xs={6} sm={3} key={index}>
                       <Box
-                        key={index}
                         sx={{
-                          textAlign: { xs: "center", md: "left" },
-                          minWidth: { xs: "140px", md: "160px" },
-                          p: 3,
-                          borderRadius: 4,
-                          background: "rgba(26, 31, 38, 0.8)",
-                          backdropFilter: "blur(10px)",
-                          border: "1px solid rgba(201, 169, 97, 0.2)",
+                          textAlign: "center",
+                          p: 4,
+                          borderRadius: 3,
+                          background: "#ffffff",
+                          border: "1px solid #e0e0e0",
+                          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
                           transition: "all 0.3s ease",
+                          height: "100%",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          minHeight: { xs: "140px", sm: "160px" },
                           "&:hover": {
                             transform: "translateY(-4px)",
-                            boxShadow: "0px 8px 24px rgba(201, 169, 97, 0.2)",
+                            boxShadow: "0px 6px 20px rgba(30, 58, 95, 0.15)",
+                            borderColor: theme.palette.primary.main,
                           },
                         }}
                       >
-                        <Box>
-                          <Typography
-                            variant="h4"
-                            component="div"
-                            sx={{
-                              fontWeight: 700,
-                              color: theme.palette.primary.main,
-                              mb: 0.5,
-                              fontSize: { xs: "2rem", md: "2.5rem" },
-                            }}
-                          >
-                            {stat.number}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: theme.palette.text.secondary,
-                              fontSize: { xs: "0.9rem", md: "1rem" },
-                              fontWeight: 500,
-                            }}
-                          >
-                            {stat.label}
-                          </Typography>
-                        </Box>
+                        <Typography
+                          variant="h3"
+                          component="div"
+                          sx={{
+                            fontWeight: 700,
+                            color: theme.palette.primary.main,
+                            mb: 1,
+                            fontSize: { xs: "2.5rem", md: "3rem" },
+                          }}
+                        >
+                          {stat.number}
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            color: theme.palette.text.secondary,
+                            fontSize: { xs: "0.9rem", md: "1rem" },
+                            fontWeight: 500,
+                          }}
+                        >
+                          {stat.label}
+                        </Typography>
                       </Box>
-                    ))}
-                  </Box>
-                </motion.div>
-              </Grid>
-
-              <Grid item xs={12} md={6}>
-                <motion.div variants={scaleIn}>
-                  <Box
-                    sx={{
-                      position: "relative",
-                      height: { xs: 280, sm: 350, md: 450 },
-                      background: `linear-gradient(135deg, ${theme.palette.secondary.light} 0%, ${theme.palette.secondary.main} 100%)`,
-                      borderRadius: 8,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0px 20px 60px rgba(244, 166, 184, 0.25)",
-                      overflow: "hidden",
-                      mt: { xs: 4, md: 0 },
-                      mx: { xs: 1, md: 0 },
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        textAlign: "center",
-                        p: { xs: 4, md: 5 },
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <img
-                        src="/logo.png"
-                        alt="SNS Legal Logo"
-                        style={{
-                          maxWidth: "100%",
-                          maxHeight: "100%",
-                          width: "auto",
-                          height: "auto",
-                          objectFit: "contain",
-                        }}
-                      />
-                    </Box>
-                  </Box>
-                </motion.div>
-              </Grid>
-            </Grid>
+                    </Grid>
+                  ))}
+                </Grid>
+              </motion.div>
+            </Box>
           </motion.div>
         </Container>
       </Box>
@@ -381,6 +351,7 @@ const HomePage: React.FC = () => {
           bgcolor: "background.paper",
           px: { xs: 2, md: 0 },
           position: "relative",
+          overflow: "hidden",
           "&::before": {
             content: '""',
             position: "absolute",
@@ -392,8 +363,8 @@ const HomePage: React.FC = () => {
               45deg,
               transparent,
               transparent 35px,
-              rgba(201, 169, 97, 0.02) 35px,
-              rgba(201, 169, 97, 0.02) 70px
+              rgba(30, 58, 95, 0.03) 35px,
+              rgba(30, 58, 95, 0.03) 70px
             )`,
             pointerEvents: "none",
           },
@@ -505,7 +476,7 @@ const HomePage: React.FC = () => {
         sx={{
           height: "2px",
           background:
-            "linear-gradient(90deg, transparent 0%, #c9a961 50%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #1e3a5f 50%, transparent 100%)",
           opacity: 0.3,
         }}
       />
@@ -516,7 +487,7 @@ const HomePage: React.FC = () => {
         component="section"
         sx={{
           py: { xs: 10, md: 14 },
-          background: "linear-gradient(135deg, #1a1f26 0%, #0f1419 100%)",
+          background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
           px: { xs: 2, md: 0 },
           position: "relative",
           "&::before": {
@@ -528,7 +499,17 @@ const HomePage: React.FC = () => {
             width: "600px",
             height: "600px",
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.05) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(30, 58, 95, 0.03) 0%, transparent 70%)",
+            pointerEvents: "none",
+          },
+          "& .about-decorative-square": {
+            position: "absolute",
+            bottom: "10%",
+            left: "5%",
+            width: "150px",
+            height: "150px",
+            border: "2px solid rgba(58, 124, 165, 0.1)",
+            transform: "rotate(45deg)",
             pointerEvents: "none",
           },
         }}
@@ -558,6 +539,7 @@ const HomePage: React.FC = () => {
                 sx={{
                   maxWidth: "900px",
                   mx: "auto",
+                  textAlign: "left",
                 }}
               >
                 <Typography
@@ -756,7 +738,7 @@ const HomePage: React.FC = () => {
         sx={{
           height: "2px",
           background:
-            "linear-gradient(90deg, transparent 0%, #7a9cc6 50%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #3a7ca5 50%, transparent 100%)",
           opacity: 0.3,
         }}
       />
@@ -767,7 +749,7 @@ const HomePage: React.FC = () => {
         component="section"
         sx={{
           py: { xs: 10, md: 14 },
-          background: "linear-gradient(180deg, #0f1419 0%, #1a1f26 100%)",
+          background: "linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%)",
           px: { xs: 2, md: 0 },
         }}
       >
@@ -818,9 +800,8 @@ const HomePage: React.FC = () => {
         component="section"
         sx={{
           py: { xs: 10, md: 14 },
-          background: "linear-gradient(135deg, #1a1f26 0%, #2d3339 100%)",
+          background: "linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)",
           position: "relative",
-          overflow: "hidden",
           px: { xs: 2, md: 0 },
           "&::before": {
             content: '""',
@@ -829,8 +810,18 @@ const HomePage: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: `radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
-                         radial-gradient(circle at 80% 50%, rgba(122, 156, 198, 0.1) 0%, transparent 50%)`,
+            background: `radial-gradient(circle at 20% 50%, rgba(30, 58, 95, 0.05) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 50%, rgba(58, 124, 165, 0.05) 0%, transparent 50%)`,
+            pointerEvents: "none",
+          },
+          "& .cta-decorative-line": {
+            position: "absolute",
+            top: "30%",
+            left: "0",
+            width: "250px",
+            height: "3px",
+            background:
+              "linear-gradient(90deg, transparent 0%, rgba(58, 124, 165, 0.2) 100%)",
             pointerEvents: "none",
           },
         }}
@@ -848,7 +839,7 @@ const HomePage: React.FC = () => {
               component="h2"
               sx={{
                 mb: 3,
-                color: "#e8e8e8",
+                color: "#1a1a1a",
                 fontSize: { xs: "2rem", md: "clamp(2rem, 4vw, 2.8rem)" },
                 fontWeight: 700,
               }}
@@ -858,7 +849,7 @@ const HomePage: React.FC = () => {
             <Typography
               variant="h6"
               sx={{
-                color: "#a0a0a0",
+                color: "#666666",
                 fontSize: { xs: "1.1rem", md: "1.3rem" },
                 mb: 5,
                 px: { xs: 2, md: 0 },
@@ -910,15 +901,15 @@ const HomePage: React.FC = () => {
                   px: 6,
                   fontSize: { xs: "1.1rem", md: "1.15rem" },
                   borderRadius: 8,
-                  borderColor: "white",
-                  color: "white",
+                  borderColor: theme.palette.secondary.main,
+                  color: theme.palette.secondary.main,
                   borderWidth: "2px",
                   fontWeight: 600,
                   width: { xs: "100%", sm: "auto" },
                   maxWidth: { xs: "320px", sm: "none" },
                   "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    borderColor: "white",
+                    backgroundColor: "rgba(58, 124, 165, 0.08)",
+                    borderColor: theme.palette.secondary.dark,
                     borderWidth: "2px",
                     transform: "translateY(-2px)",
                   },

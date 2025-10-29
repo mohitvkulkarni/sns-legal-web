@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      sx={{ bgcolor: "primary.main", color: "background.paper", py: 8 }}
+      sx={{ bgcolor: "primary.main", color: "#ffffff", py: 8 }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={5}>
@@ -19,7 +19,11 @@ const Footer = () => {
               variant="h6"
               component="h3"
               gutterBottom
-              sx={{ fontFamily: "'Inter', 'sans-serif'", lineHeight: 1.4 }}
+              sx={{
+                fontFamily: "'Inter', 'sans-serif'",
+                lineHeight: 1.4,
+                color: "#ffffff",
+              }}
             >
               SNS Legal
               <br />

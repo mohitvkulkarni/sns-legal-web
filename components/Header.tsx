@@ -74,7 +74,7 @@ const Header: React.FC = () => {
             borderRadius: 2,
             position: "relative",
             "&:hover": {
-              backgroundColor: "rgba(201, 169, 97, 0.12)",
+              backgroundColor: "rgba(30, 58, 95, 0.08)",
               color: theme.palette.primary.main,
             },
             "&::after": isActive
@@ -105,7 +105,7 @@ const Header: React.FC = () => {
       onClose={handleMobileMenuToggle}
       sx={{
         "& .MuiDrawer-paper": {
-          backgroundColor: "rgba(15, 20, 25, 0.98)",
+          backgroundColor: "rgba(255, 255, 255, 0.98)",
           backdropFilter: "blur(20px)",
           borderBottom: `1px solid ${theme.palette.divider}`,
           paddingTop: "80px",
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                 borderRadius: 2,
                 mb: 1,
                 "&:hover": {
-                  backgroundColor: "rgba(201, 169, 97, 0.12)",
+                  backgroundColor: "rgba(30, 58, 95, 0.08)",
                 },
               }}
             >
@@ -175,8 +175,8 @@ const Header: React.FC = () => {
           elevation={0}
           sx={{
             backgroundColor: isScrolled
-              ? "rgba(15, 20, 25, 0.98)"
-              : "rgba(15, 20, 25, 0.95)",
+              ? "rgba(255, 255, 255, 0.98)"
+              : "rgba(255, 255, 255, 0.95)",
             backdropFilter: "blur(20px)",
             borderBottom: isScrolled
               ? `1px solid ${theme.palette.divider}`
@@ -205,26 +205,13 @@ const Header: React.FC = () => {
                 >
                   <Box
                     component="img"
-                    src="/logo.png"
+                    src="/logo-updated.png"
                     alt="SNS Legal"
                     sx={{
-                      height: { xs: 35, md: 45 },
+                      height: { xs: 50, md: 65 },
                       width: "auto",
-                      mr: 2,
                     }}
                   />
-                  <Typography
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      fontWeight: 700,
-                      color: theme.palette.primary.main,
-                      letterSpacing: "-0.02em",
-                      display: { xs: "none", sm: "block" },
-                    }}
-                  >
-                    SNS Legal
-                  </Typography>
                 </Box>
               </motion.div>
 

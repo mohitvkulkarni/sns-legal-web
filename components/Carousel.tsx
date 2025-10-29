@@ -44,9 +44,9 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           left: -16,
           zIndex: 1,
           transform: { md: "translateX(0)" },
-          bgcolor: "background.paper",
-          boxShadow: 3,
-          "&:hover": { bgcolor: "background.default" },
+          bgcolor: "#ffffff",
+          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+          "&:hover": { bgcolor: "#f5f5f5" },
         }}
       >
         <ArrowBackIosNewIcon />
@@ -66,9 +66,11 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <Card
             variant="outlined"
             sx={{
-              border: "1px solid #2d3339",
+              border: "1px solid #e0e0e0",
               borderRadius: 3,
               textAlign: "center",
+              bgcolor: "#ffffff",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.08)",
             }}
           >
             <CardContent sx={{ p: { xs: 4, md: 6 } }}>
@@ -119,9 +121,9 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           right: -16,
           zIndex: 1,
           transform: { md: "translateX(0)" },
-          bgcolor: "background.paper",
-          boxShadow: 3,
-          "&:hover": { bgcolor: "background.default" },
+          bgcolor: "#ffffff",
+          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+          "&:hover": { bgcolor: "#f5f5f5" },
         }}
       >
         <ArrowForwardIosIcon />
@@ -146,7 +148,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
               height: 8,
               width: currentIndex === index ? 24 : 8,
               borderRadius: "4px",
-              bgcolor: currentIndex === index ? "primary.main" : "grey.300",
+              bgcolor: currentIndex === index ? "#1e3a5f" : "#e0e0e0",
               cursor: "pointer",
               transition: "width 0.3s ease-in-out",
             }}
