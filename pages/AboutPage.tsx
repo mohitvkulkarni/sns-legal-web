@@ -220,21 +220,7 @@ const AboutPage = () => {
           bgcolor: "#ffffff",
           borderTop: "1px solid #e0e0e0",
         }}
-      >
-        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h5"
-              sx={{ mb: 2, fontWeight: 600, color: "primary.main" }}
-            >
-              Professional Affiliations
-            </Typography>
-            <Typography variant="h6" color="text.secondary">
-              Bar Council of India • Karnataka State Bar Council
-            </Typography>
-          </Box>
-        </Container>
-      </Box>
+      ></Box>
     </Box>
   );
 };
