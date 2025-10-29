@@ -282,60 +282,72 @@ const HomePage: React.FC = () => {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Grid
-                  container
-                  spacing={3}
-                  sx={{ maxWidth: "900px", mx: "auto" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "100%",
+                  }}
                 >
-                  {stats.map((stat, index) => (
-                    <Grid item xs={6} sm={3} key={index}>
-                      <Box
-                        sx={{
-                          textAlign: "center",
-                          p: 4,
-                          borderRadius: 3,
-                          background: "#ffffff",
-                          border: "1px solid #e0e0e0",
-                          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
-                          transition: "all 0.3s ease",
-                          height: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "center",
-                          minHeight: { xs: "140px", sm: "160px" },
-                          "&:hover": {
-                            transform: "translateY(-4px)",
-                            boxShadow: "0px 6px 20px rgba(30, 58, 95, 0.15)",
-                            borderColor: theme.palette.primary.main,
-                          },
-                        }}
-                      >
-                        <Typography
-                          variant="h3"
-                          component="div"
+                  <Grid
+                    container
+                    spacing={3}
+                    sx={{
+                      maxWidth: "900px",
+                      justifyContent: "center",
+                      width: "100%",
+                    }}
+                  >
+                    {stats.map((stat, index) => (
+                      <Grid item xs={6} sm={6} md={3} key={index}>
+                        <Box
                           sx={{
-                            fontWeight: 700,
-                            color: theme.palette.primary.main,
-                            mb: 1,
-                            fontSize: { xs: "2.5rem", md: "3rem" },
+                            textAlign: "center",
+                            p: 4,
+                            borderRadius: 3,
+                            background: "#ffffff",
+                            border: "1px solid #e0e0e0",
+                            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
+                            transition: "all 0.3s ease",
+                            height: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            minHeight: { xs: "140px", sm: "160px" },
+                            "&:hover": {
+                              transform: "translateY(-4px)",
+                              boxShadow: "0px 6px 20px rgba(30, 58, 95, 0.15)",
+                              borderColor: theme.palette.primary.main,
+                            },
                           }}
                         >
-                          {stat.number}
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          sx={{
-                            color: theme.palette.text.secondary,
-                            fontSize: { xs: "0.9rem", md: "1rem" },
-                            fontWeight: 500,
-                          }}
-                        >
-                          {stat.label}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
+                          <Typography
+                            variant="h3"
+                            component="div"
+                            sx={{
+                              fontWeight: 700,
+                              color: theme.palette.primary.main,
+                              mb: 1,
+                              fontSize: { xs: "2.5rem", md: "3rem" },
+                            }}
+                          >
+                            {stat.number}
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              color: theme.palette.text.secondary,
+                              fontSize: { xs: "0.9rem", md: "1rem" },
+                              fontWeight: 500,
+                            }}
+                          >
+                            {stat.label}
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
               </motion.div>
             </Box>
           </motion.div>
