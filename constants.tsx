@@ -8,6 +8,14 @@ export const API_CONFIG = {
   },
 };
 
+// EmailJS Configuration
+export const EMAILJS_CONFIG = {
+  SERVICE_ID: "service_r458m7s",
+  TEMPLATE_ID: "template_86z78ab",
+  PUBLIC_KEY: "kKDs8Z3ZpnEZ3boqm", // Replace with your EmailJS Public Key
+  RECIPIENT_EMAIL: "sanjana@snslegalcounsellors.com",
+};
+
 export const DISCLAIMER_CONTENT = {
   title: "DISCLAIMER & CONFIRMATION",
   introduction: `As per the rules of the Bar Council of India, SNS Legal (hereinafter referred to as the "Firm") is not permitted to solicit work or advertise its services in any manner. By clicking "I Agree" below and accessing this website, the user expressly acknowledges and agrees to the following:`,

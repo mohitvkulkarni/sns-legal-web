@@ -1,4 +1,5 @@
-import { API_CONFIG } from "../constants";
+import emailjs from "@emailjs/browser";
+import { EMAILJS_CONFIG } from "../constants";
 
 export interface ContactFormData {
   first_name: string;
@@ -14,94 +15,76 @@ export interface ContactFormResponse {
   error?: string;
 }
 
-const parseResponse = async (response: Response) => {
-  const contentType = response.headers.get("content-type");
-
-  if (contentType?.includes("application/json")) {
-    return await response.json();
-  }
-  return await response.text();
-};
-
-const determineSuccess = (data: any, response: Response): boolean => {
-  if (typeof data === "object") {
-    return data.success === true || data.status === "success";
-  }
-
-  const dataStr = data.toLowerCase();
-  return (
-    dataStr.includes("success") ||
-    dataStr.includes("sent") ||
-    dataStr.includes("thank") ||
-    response.status === 200
-  );
-};
-
-const getErrorData = (data: any, isSuccess: boolean): string | undefined => {
-  if (isSuccess) {
-    return undefined;
-  }
-  return typeof data === "string" ? data : JSON.stringify(data);
-};
+interface EmailJSTemplateParams {
+  from_first_name: string;
+  from_last_name: string;
+  from_email: string;
+  subject: string;
+  message: string;
+  to_email: string;
+}
 
 export const submitContactForm = async (
   formData: ContactFormData
 ): Promise<ContactFormResponse> => {
   try {
-    const response = await fetch(
-      `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CONTACT}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-        mode: "cors",
-      }
+    // Map form data to EmailJS template parameters
+    const templateParams: EmailJSTemplateParams = {
+      from_first_name: formData.first_name,
+      from_last_name: formData.last_name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_email: EMAILJS_CONFIG.RECIPIENT_EMAIL,
+    };
+
+    // Send email using EmailJS
+    const response = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_ID,
+      templateParams,
+      EMAILJS_CONFIG.PUBLIC_KEY
     );
 
-    if (!response.ok) {
-      throw new Error(
-        `HTTP error! status: ${response.status} - ${response.statusText}`
-      );
-    }
-
-    const data = await parseResponse(response);
-    const isSuccess = determineSuccess(data, response);
-    const defaultMessage = "Message sent successfully!";
-    const message =
-      (typeof data === "object" ? data.message : null) ?? defaultMessage;
+    console.log("EmailJS Response:", response);
 
     return {
-      success: isSuccess,
-      message: isSuccess
-        ? message
-        : "Failed to send message. Please try again.",
-      error: getErrorData(data, isSuccess),
+      success: true,
+      message: "Message sent successfully! We'll get back to you soon.",
     };
   } catch (error) {
-    console.error("Contact form submission error:", error);
+    console.error("EmailJS Error:", error);
 
     let errorMessage = "Failed to send message. Please try again later.";
+    let errorDetails = "Unknown error occurred";
 
-    if (error instanceof TypeError && error.message.includes("fetch")) {
+    // Handle EmailJS-specific errors
+    if (error && typeof error === "object" && "text" in error) {
+      errorDetails = (error as any).text;
+
+      // Check for common error types
+      if (
+        errorDetails.includes("Invalid") ||
+        errorDetails.includes("not found")
+      ) {
+        errorMessage =
+          "Email service configuration error. Please contact support.";
+      } else if (errorDetails.includes("limit")) {
+        errorMessage =
+          "Service temporarily unavailable. Please try again later.";
+      }
+    } else if (error instanceof TypeError && error.message.includes("fetch")) {
       errorMessage =
         "Network error. Please check your internet connection and try again.";
-    } else if (error instanceof Error && error.message.includes("CORS")) {
-      errorMessage =
-        "Unable to connect to server. This may be a temporary issue.";
+      errorDetails = error.message;
+    } else if (error instanceof Error) {
+      errorDetails = error.message;
     }
 
     return {
       success: false,
       message: errorMessage,
-      error: error instanceof Error ? error.message : "Unknown error occurred",
+      error: errorDetails,
     };
   }
 };
