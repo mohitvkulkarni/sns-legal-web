@@ -46,7 +46,7 @@ const BlogPage = () => {
                       flexDirection: "column",
                     }}
                   >
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box>
                       <Typography variant="h4" component="h2" gutterBottom>
                         {post.title}
                       </Typography>
