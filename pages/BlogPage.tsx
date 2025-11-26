@@ -37,17 +37,16 @@ const BlogPage = () => {
         <Grid container spacing={5}>
           {BLOG_POSTS.map((post) => (
             <Grid item xs={12} md={6} key={post.id}>
-              <Card sx={{ height: "100%", borderRadius: 3, display: "flex" }}>
+              <Card sx={{ borderRadius: 3, display: "flex" }}>
                 <CardActionArea component={RouterLink} to={`/blog/${post.id}`}>
                   <CardContent
                     sx={{
                       p: 4,
                       display: "flex",
                       flexDirection: "column",
-                      height: "100%",
                     }}
                   >
-                    <Box flexGrow={1}>
+                    <Box sx={{ flexGrow: 1 }}>
                       <Typography variant="h4" component="h2" gutterBottom>
                         {post.title}
                       </Typography>
@@ -64,21 +63,38 @@ const BlogPage = () => {
                       >
                         "{post.quote}"
                       </Typography>
+                      <Box sx={{ mt: 2 }}>
+                        <Typography
+                          variant="caption"
+                          color="text.secondary"
+                          sx={{ display: "block", mb: 0.5 }}
+                        >
+                          {post.date} • By {post.author}
+                        </Typography>
+                        <Typography
+                          variant="caption"
+                          color="primary.main"
+                          sx={{ fontWeight: 500 }}
+                        >
+                          {post.readTime}
+                        </Typography>
+                      </Box>
                     </Box>
-                    <Link
-                      component="div"
-                      variant="button"
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        mt: 3,
-                        color: "secondary.main",
-                        textDecoration: "none",
-                      }}
-                    >
-                      Read More{" "}
-                      <ArrowForwardIcon sx={{ ml: 1, fontSize: "1rem" }} />
-                    </Link>
+                    <Box sx={{ mt: 3, pt: 2 }}>
+                      <Link
+                        component="div"
+                        variant="button"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          color: "secondary.main",
+                          textDecoration: "none",
+                        }}
+                      >
+                        Read More{" "}
+                        <ArrowForwardIcon sx={{ ml: 1, fontSize: "1rem" }} />
+                      </Link>
+                    </Box>
                   </CardContent>
                 </CardActionArea>
               </Card>

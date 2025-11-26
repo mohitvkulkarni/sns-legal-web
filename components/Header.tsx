@@ -27,9 +27,9 @@ const Header: React.FC = () => {
 
   const navigationItems = [
     { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Practice Areas", path: "/practice-areas" },
-    { label: "Blog", path: "/blog" },
+    { label: "Expertise", path: "/practice-areas" },
+    { label: "Knowledge Repository", path: "/blog" },
+    { label: "About Us", path: "/about" },
     { label: "Contact", path: "/contact" },
   ];
 

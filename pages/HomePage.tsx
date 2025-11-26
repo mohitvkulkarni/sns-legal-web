@@ -96,8 +96,8 @@ const HomePage: React.FC = () => {
   ];
 
   const stats = [
-    { number: "15+", label: "Years Experience" },
-    { number: "100+", label: "Cases Handled" },
+    { number: "45+", label: "Years Experience" },
+    { number: "400+", label: "Cases Handled" },
     { number: "9", label: "Practice Areas" },
     { number: "100%", label: "Client Satisfaction" },
   ];
@@ -239,49 +239,6 @@ const HomePage: React.FC = () => {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Stack
-                  direction={{ xs: "column", sm: "row" }}
-                  spacing={3}
-                  sx={{
-                    mb: 8,
-                    justifyContent: "center",
-                  }}
-                >
-                  <Button
-                    variant="contained"
-                    size="large"
-                    component={RouterLink}
-                    to="/contact"
-                    endIcon={<ArrowForward />}
-                    sx={{
-                      py: 2,
-                      px: 5,
-                      fontSize: "1.1rem",
-                      borderRadius: 2,
-                      fontWeight: 600,
-                    }}
-                  >
-                    Get Legal Consultation
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    component={RouterLink}
-                    to="/about"
-                    sx={{
-                      py: 2,
-                      px: 5,
-                      fontSize: "1.1rem",
-                      borderRadius: 2,
-                      fontWeight: 600,
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </Stack>
-              </motion.div>
-
-              <motion.div variants={fadeInUp}>
                 <Box
                   sx={{
                     display: "flex",
@@ -350,6 +307,340 @@ const HomePage: React.FC = () => {
                 </Box>
               </motion.div>
             </Box>
+          </motion.div>
+        </Container>
+      </Box>
+
+      {/* Decorative Divider */}
+      <Box
+        sx={{
+          height: "2px",
+          background:
+            "linear-gradient(90deg, transparent 0%, #1e3a5f 50%, transparent 100%)",
+          opacity: 0.3,
+        }}
+      />
+
+      {/* About Section */}
+      <Box
+        ref={aboutRef}
+        component="section"
+        sx={{
+          py: { xs: 10, md: 14 },
+          background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
+          px: { xs: 2, md: 0 },
+          position: "relative",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "600px",
+            height: "600px",
+            background:
+              "radial-gradient(circle, rgba(30, 58, 95, 0.03) 0%, transparent 70%)",
+            pointerEvents: "none",
+          },
+          "& .about-decorative-square": {
+            position: "absolute",
+            bottom: "10%",
+            left: "5%",
+            width: "150px",
+            height: "150px",
+            border: "2px solid rgba(58, 124, 165, 0.1)",
+            transform: "rotate(45deg)",
+            pointerEvents: "none",
+          },
+        }}
+      >
+        <Container maxWidth="lg">
+          <motion.div
+            initial="initial"
+            animate={aboutInView ? "animate" : "initial"}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <Typography
+                variant="h2"
+                component="h2"
+                align="center"
+                sx={{
+                  mb: { xs: 4, md: 6 },
+                  fontSize: { xs: "2rem", md: "clamp(2rem, 6vw, 3.5rem)" },
+                }}
+              >
+                SNS Legal
+              </Typography>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <Box
+                sx={{
+                  maxWidth: "900px",
+                  mx: "auto",
+                  textAlign: "left",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{
+                    fontSize: { xs: "1.05rem", md: "1.15rem" },
+                    mb: 4,
+                    px: { xs: 1, md: 0 },
+                    lineHeight: 1.8,
+                  }}
+                >
+                  SNS Legal is a contemporary law firm based in Bangalore,
+                  committed to delivering high-quality legal services across a
+                  wide spectrum of practice areas. With a clear understanding of
+                  the evolving legal, commercial, and technological landscape,
+                  the firm integrates traditional legal knowledge with a modern,
+                  research-driven approach.
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{
+                    fontSize: { xs: "1.05rem", md: "1.15rem" },
+                    mb: 4,
+                    px: { xs: 1, md: 0 },
+                    lineHeight: 1.8,
+                  }}
+                >
+                  Our team is composed of legal professionals from
+                  interdisciplinary backgrounds, including law, technology,
+                  business, and public policy. With a combined experience of
+                  over four decades, we bring a balanced mix of expertise,
+                  strategic thinking, and adaptability.
+                </Typography>
+              </Box>
+            </motion.div>
+
+            <Collapse in={isIntroExpanded} timeout="auto" unmountOnExit>
+              <motion.div variants={fadeInUp}>
+                <Box
+                  sx={{
+                    maxWidth: "900px",
+                    mx: "auto",
+                    textAlign: "left",
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "1rem", md: "1.125rem" },
+                      mb: 3,
+                      px: { xs: 1, md: 0 },
+                    }}
+                  >
+                    At SNS Legal, we offer legal services in civil and criminal
+                    litigation, corporate and commercial law, data privacy and
+                    compliance advisory, real estate and property matters,
+                    family and matrimonial disputes, white-collar crime,
+                    employment and labour law, startup and investment advisory,
+                    intellectual property rights, data privacy and technology
+                    law, cybercrime, consumer protection, and alternative
+                    dispute resolution (ADR). We also remain actively engaged in
+                    emerging sectors such as fintech, ESG compliance, digital
+                    assets, artificial intelligence law, and cross-border
+                    regulatory frameworks.
+                  </Typography>
+
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "1rem", md: "1.125rem" },
+                      mb: 3,
+                      px: { xs: 1, md: 0 },
+                    }}
+                  >
+                    While the scope of our work is broad, our approach remains
+                    focused and client-conscious. We understand that behind
+                    every legal matter lies a unique concern—whether personal,
+                    financial, or reputational. As a result, we approach each
+                    case with a commitment to clarity, confidentiality, and
+                    care, taking the time to understand the context as
+                    thoroughly as we analyse the law.
+                  </Typography>
+
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "1rem", md: "1.125rem" },
+                      mb: 3,
+                      px: { xs: 1, md: 0 },
+                    }}
+                  >
+                    Being a boutique practice allows us to remain agile and
+                    attentive. We are selective in our engagements, allowing us
+                    to deliver detailed, customised legal solutions rather than
+                    adopting a one-size-fits-all approach. Whether it is guiding
+                    a founder through the complexities of structuring an
+                    early-stage company, supporting an individual during a
+                    difficult family dispute, or advising a business on
+                    regulatory compliance, we approach each matter with
+                    professionalism and purpose.
+                  </Typography>
+
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "1rem", md: "1.125rem" },
+                      mb: 3,
+                      px: { xs: 1, md: 0 },
+                    }}
+                  >
+                    Our firm's ethos is shaped not only by legal competence but
+                    by our ongoing effort to stay relevant and responsible in a
+                    changing world. Legal practice today requires more than just
+                    knowledge of statutes and precedents—it demands awareness of
+                    business realities, technological disruptions, and
+                    socio-economic change. At SNS Legal, we actively engage in
+                    continuing education, sectoral research, and policy
+                    awareness to ensure that our advice remains practical,
+                    contemporary, and effective.
+                  </Typography>
+
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{
+                      fontSize: { xs: "1rem", md: "1.125rem" },
+                      mb: 4,
+                      px: { xs: 1, md: 0 },
+                    }}
+                  >
+                    We believe that strong legal counsel is not just about
+                    representation—it is about informed guidance, strategic
+                    foresight, and trusted partnership. Through a combination of
+                    legal rigour and human understanding, SNS Legal remains
+                    committed to upholding the integrity of the law while
+                    assisting those who turn to it for resolution, direction, or
+                    support.
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Collapse>
+
+            <motion.div variants={fadeInUp}>
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                spacing={2}
+                justifyContent="center"
+                sx={{ px: { xs: 1, md: 0 } }}
+              >
+                <Button
+                  variant="outlined"
+                  onClick={() => setIntroExpanded(!isIntroExpanded)}
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 3,
+                    width: { xs: "100%", sm: "auto" },
+                    maxWidth: { xs: "280px", sm: "none" },
+                    mx: { xs: "auto", sm: 0 },
+                    borderColor: theme.palette.secondary.main,
+                    color: theme.palette.primary.main,
+                    borderWidth: "2px",
+                    "&:hover": {
+                      backgroundColor: theme.palette.secondary.light,
+                      borderWidth: "2px",
+                    },
+                  }}
+                >
+                  {isIntroExpanded ? "Show Less" : "Know More"}
+                </Button>
+                <Button
+                  variant="contained"
+                  component={RouterLink}
+                  to="/contact"
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 3,
+                    width: { xs: "100%", sm: "auto" },
+                    maxWidth: { xs: "280px", sm: "none" },
+                    mx: { xs: "auto", sm: 0 },
+                    bgcolor: theme.palette.primary.main,
+                    color: theme.palette.primary.contrastText,
+                    "&:hover": {
+                      bgcolor: theme.palette.primary.light,
+                    },
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </Stack>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Box>
+
+      {/* Decorative Divider */}
+      <Box
+        sx={{
+          height: "2px",
+          background:
+            "linear-gradient(90deg, transparent 0%, #3a7ca5 50%, transparent 100%)",
+          opacity: 0.3,
+        }}
+      />
+
+      {/* Practice Areas Section */}
+      <Box
+        ref={practiceRef}
+        component="section"
+        sx={{
+          py: { xs: 10, md: 14 },
+          background: "linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%)",
+          px: { xs: 2, md: 0 },
+        }}
+      >
+        <Container maxWidth="lg">
+          <motion.div
+            initial="initial"
+            animate={practiceInView ? "animate" : "initial"}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <Typography
+                variant="h2"
+                component="h2"
+                align="center"
+                sx={{
+                  mb: 2,
+                  fontSize: { xs: "2rem", md: "clamp(2rem, 6vw, 3.5rem)" },
+                }}
+              >
+                Our Expertise
+              </Typography>
+              <Typography
+                variant="h6"
+                align="center"
+                color="text.secondary"
+                sx={{
+                  mb: { xs: 6, md: 8 },
+                  maxWidth: "700px",
+                  mx: "auto",
+                  px: { xs: 2, md: 0 },
+                  fontSize: { xs: "1rem", md: "1.25rem" },
+                }}
+              >
+                Dedicated counsel across a spectrum of legal domains, tailored
+                to your unique needs.
+              </Typography>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <Carousel items={PRACTICE_AREAS} />
+            </motion.div>
           </motion.div>
         </Container>
       </Box>
@@ -479,330 +770,6 @@ const HomePage: React.FC = () => {
                 </Grid>
               ))}
             </Grid>
-          </motion.div>
-        </Container>
-      </Box>
-
-      {/* Decorative Divider */}
-      <Box
-        sx={{
-          height: "2px",
-          background:
-            "linear-gradient(90deg, transparent 0%, #1e3a5f 50%, transparent 100%)",
-          opacity: 0.3,
-        }}
-      />
-
-      {/* About Section */}
-      <Box
-        ref={aboutRef}
-        component="section"
-        sx={{
-          py: { xs: 10, md: 14 },
-          background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
-          px: { xs: 2, md: 0 },
-          position: "relative",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "600px",
-            height: "600px",
-            background:
-              "radial-gradient(circle, rgba(30, 58, 95, 0.03) 0%, transparent 70%)",
-            pointerEvents: "none",
-          },
-          "& .about-decorative-square": {
-            position: "absolute",
-            bottom: "10%",
-            left: "5%",
-            width: "150px",
-            height: "150px",
-            border: "2px solid rgba(58, 124, 165, 0.1)",
-            transform: "rotate(45deg)",
-            pointerEvents: "none",
-          },
-        }}
-      >
-        <Container maxWidth="lg">
-          <motion.div
-            initial="initial"
-            animate={aboutInView ? "animate" : "initial"}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp}>
-              <Typography
-                variant="h2"
-                component="h2"
-                align="center"
-                sx={{
-                  mb: { xs: 4, md: 6 },
-                  fontSize: { xs: "2rem", md: "clamp(2rem, 6vw, 3.5rem)" },
-                }}
-              >
-                About SNS Legal
-              </Typography>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <Box
-                sx={{
-                  maxWidth: "900px",
-                  mx: "auto",
-                  textAlign: "left",
-                }}
-              >
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1.05rem", md: "1.15rem" },
-                    mb: 4,
-                    px: { xs: 1, md: 0 },
-                    lineHeight: 1.8,
-                  }}
-                >
-                  SNS Legal is a contemporary law firm based in Bangalore,
-                  committed to delivering high-quality legal services across a
-                  wide spectrum of practice areas. With a clear understanding of
-                  the evolving legal, commercial, and technological landscape,
-                  the firm integrates traditional legal knowledge with a modern,
-                  research-driven approach.
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1.05rem", md: "1.15rem" },
-                    mb: 4,
-                    px: { xs: 1, md: 0 },
-                    lineHeight: 1.8,
-                  }}
-                >
-                  Our team is composed of legal professionals from
-                  interdisciplinary backgrounds, including law, technology,
-                  business, and public policy. With a combined experience of
-                  over a decade, we bring a balanced mix of expertise, strategic
-                  thinking, and adaptability.
-                </Typography>
-              </Box>
-            </motion.div>
-
-            <Collapse in={isIntroExpanded} timeout="auto" unmountOnExit>
-              <motion.div variants={fadeInUp}>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1rem", md: "1.125rem" },
-                    mb: 3,
-                    px: { xs: 1, md: 0 },
-                  }}
-                >
-                  At SNS Legal, we offer legal services in civil and criminal
-                  litigation, corporate and commercial law, real estate and
-                  property matters, family and matrimonial disputes,
-                  white-collar crime, employment and labour law, startup and
-                  investment advisory, intellectual property rights, data
-                  privacy and technology law, cybercrime, consumer protection,
-                  and alternative dispute resolution (ADR). We also remain
-                  actively engaged in emerging sectors such as fintech, ESG
-                  compliance, digital assets, artificial intelligence law, and
-                  cross-border regulatory frameworks.
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1rem", md: "1.125rem" },
-                    mb: 3,
-                    px: { xs: 1, md: 0 },
-                  }}
-                >
-                  While the scope of our work is broad, our approach remains
-                  focused and client-conscious. We understand that behind every
-                  legal matter lies a unique concern—whether personal,
-                  financial, or reputational. As a result, we approach each case
-                  with a commitment to clarity, confidentiality, and care,
-                  taking the time to understand the context as thoroughly as we
-                  analyse the law.
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1rem", md: "1.125rem" },
-                    mb: 3,
-                    px: { xs: 1, md: 0 },
-                  }}
-                >
-                  Being a boutique practice allows us to remain agile and
-                  attentive. We are selective in our engagements, allowing us to
-                  deliver detailed, customised legal solutions rather than
-                  adopting a one-size-fits-all approach. Whether it is guiding a
-                  founder through the complexities of structuring an early-stage
-                  company, supporting an individual during a difficult family
-                  dispute, or advising a business on regulatory compliance, we
-                  approach each matter with professionalism and purpose.
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1rem", md: "1.125rem" },
-                    mb: 3,
-                    px: { xs: 1, md: 0 },
-                  }}
-                >
-                  Our firm's ethos is shaped not only by legal competence but by
-                  our ongoing effort to stay relevant and responsible in a
-                  changing world. Legal practice today requires more than just
-                  knowledge of statutes and precedents—it demands awareness of
-                  business realities, technological disruptions, and
-                  socio-economic change. At SNS Legal, we actively engage in
-                  continuing education, sectoral research, and policy awareness
-                  to ensure that our advice remains practical, contemporary, and
-                  effective.
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{
-                    fontSize: { xs: "1rem", md: "1.125rem" },
-                    mb: 4,
-                    px: { xs: 1, md: 0 },
-                  }}
-                >
-                  We believe that strong legal counsel is not just about
-                  representation—it is about informed guidance, strategic
-                  foresight, and trusted partnership. Through a combination of
-                  legal rigour and human understanding, SNS Legal remains
-                  committed to upholding the integrity of the law while
-                  assisting those who turn to it for resolution, direction, or
-                  support.
-                </Typography>
-              </motion.div>
-            </Collapse>
-
-            <motion.div variants={fadeInUp}>
-              <Stack
-                direction={{ xs: "column", sm: "row" }}
-                spacing={2}
-                justifyContent="center"
-                sx={{ px: { xs: 1, md: 0 } }}
-              >
-                <Button
-                  variant="outlined"
-                  onClick={() => setIntroExpanded(!isIntroExpanded)}
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    width: { xs: "100%", sm: "auto" },
-                    maxWidth: { xs: "280px", sm: "none" },
-                    mx: { xs: "auto", sm: 0 },
-                    borderColor: theme.palette.secondary.main,
-                    color: theme.palette.primary.main,
-                    borderWidth: "2px",
-                    "&:hover": {
-                      backgroundColor: theme.palette.secondary.light,
-                      borderWidth: "2px",
-                    },
-                  }}
-                >
-                  {isIntroExpanded ? "Show Less" : "Know More"}
-                </Button>
-                <Button
-                  variant="contained"
-                  component={RouterLink}
-                  to="/contact"
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    width: { xs: "100%", sm: "auto" },
-                    maxWidth: { xs: "280px", sm: "none" },
-                    mx: { xs: "auto", sm: 0 },
-                    bgcolor: theme.palette.primary.main,
-                    color: theme.palette.primary.contrastText,
-                    "&:hover": {
-                      bgcolor: theme.palette.primary.light,
-                    },
-                  }}
-                >
-                  Contact Us
-                </Button>
-              </Stack>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </Box>
-
-      {/* Decorative Divider */}
-      <Box
-        sx={{
-          height: "2px",
-          background:
-            "linear-gradient(90deg, transparent 0%, #3a7ca5 50%, transparent 100%)",
-          opacity: 0.3,
-        }}
-      />
-
-      {/* Practice Areas Section */}
-      <Box
-        ref={practiceRef}
-        component="section"
-        sx={{
-          py: { xs: 10, md: 14 },
-          background: "linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%)",
-          px: { xs: 2, md: 0 },
-        }}
-      >
-        <Container maxWidth="lg">
-          <motion.div
-            initial="initial"
-            animate={practiceInView ? "animate" : "initial"}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp}>
-              <Typography
-                variant="h2"
-                component="h2"
-                align="center"
-                sx={{
-                  mb: 2,
-                  fontSize: { xs: "2rem", md: "clamp(2rem, 6vw, 3.5rem)" },
-                }}
-              >
-                Our Expertise
-              </Typography>
-              <Typography
-                variant="h6"
-                align="center"
-                color="text.secondary"
-                sx={{
-                  mb: { xs: 6, md: 8 },
-                  maxWidth: "700px",
-                  mx: "auto",
-                  px: { xs: 2, md: 0 },
-                  fontSize: { xs: "1rem", md: "1.25rem" },
-                }}
-              >
-                Dedicated counsel across a spectrum of legal domains, tailored
-                to your unique needs.
-              </Typography>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <Carousel items={PRACTICE_AREAS} />
-            </motion.div>
           </motion.div>
         </Container>
       </Box>

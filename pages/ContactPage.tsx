@@ -165,7 +165,7 @@ const ContactPage = () => {
                     Email
                   </Typography>
                   <Typography color="text.secondary" paragraph>
-                    contact@snslegalcounsellors.com
+                    shashidhar@snslegalcounsellors.com
                   </Typography>
                 </Box>
                 <Box sx={{ mt: 4 }}>

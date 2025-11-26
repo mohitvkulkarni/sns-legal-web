@@ -8,6 +8,10 @@ import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 
 const ArticleContent = styled(Box)(({ theme }) => ({
+  userSelect: "none",
+  WebkitUserSelect: "none",
+  MozUserSelect: "none",
+  msUserSelect: "none",
   "& h3": {
     ...theme.typography.h4,
     marginTop: theme.spacing(5),
@@ -65,6 +69,35 @@ const BlogDetailPage = () => {
             >
               "{post.quote}"
             </Typography>
+            <Box
+              sx={{
+                mt: 3,
+                display: "flex",
+                justifyContent: "center",
+                gap: 2,
+                flexWrap: "wrap",
+              }}
+            >
+              <Typography variant="body2" color="text.secondary">
+                {post.date}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                •
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                By {post.author}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                •
+              </Typography>
+              <Typography
+                variant="body2"
+                color="primary.main"
+                sx={{ fontWeight: 500 }}
+              >
+                {post.readTime}
+              </Typography>
+            </Box>
           </Box>
 
           <ArticleContent>{post.content}</ArticleContent>

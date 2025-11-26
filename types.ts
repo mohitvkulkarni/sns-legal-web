@@ -17,5 +17,8 @@ export interface BlogPost {
   id: string;
   title: string;
   quote: string;
+  date: string;
+  author: string;
+  readTime: string;
   content: React.ReactNode;
 }
